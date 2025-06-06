@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss","C:/Users/danie/Documents/Curso/Projetos/exerc%C3%ADcio-gulp/source/styles/variaveis.scss"],"names":[],"mappings":"AAEA,KACI,iBCHW","sourcesContent":["@use 'variaveis';\r\n\r\nbody {\r\n    background-color: variaveis.$corPrincipal\r\n}","$corPrincipal: black;"],"file":"../main.css"}
