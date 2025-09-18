@@ -1,0 +1,165 @@
+@fontPrincipal: Roboto, sans-serif;
+@fontDoTitulo: Lobster, cursive;
+@corDoTexto: #fff;
+@corDeFundo: #3498db;
+@corDoTextoDoBotao: #fff;
+@corDoFundoDoBotao: #f7b731;
+@corDoFundoSecundario: rgba(255, 255, 255, 0.1);
+
+body {
+    background: linear-gradient(135deg, @corDeFundo, darken(@corDeFundo, 15%));
+    font-family: @fontPrincipal;
+    color: @corDoTexto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+main {
+    background-color: @corDoFundoSecundario;
+    backdrop-filter: blur(6px);
+    padding: 40px 30px;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.2em;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-family: @fontDoTitulo;
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: lighten(@corDoTexto, 10%);
+}
+
+form {
+    margin-bottom: 30px;
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    input {
+        display: block;
+        margin: 0 auto 20px;
+        font-size: 1.6em;
+        max-width: 140px;
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        color: @corDoTexto;
+        border-bottom: 4px solid @corDoTexto;
+        padding: 8px;
+
+        &:focus {
+            outline: none;
+            border-color: lighten(@corDoFundoDoBotao, 10%);
+        }
+    }
+}
+
+button {
+    padding: 14px 22px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: @corDoFundoDoBotao;
+    color: @corDoTextoDoBotao;
+    font-family: @fontPrincipal;
+    border: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken(@corDoFundoDoBotao, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.resultado {
+    padding: 20px;
+    margin-top: 40px;
+    border: 4px dashed lighten(@corDoTexto, 10%);
+    border-radius: 12px;
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    span {
+        font-weight: bold;
+        font-size: 3em;
+        display: block;
+        color: lighten(@corDoFundoDoBotao, 10%);
+        text-shadow: 0 0 6px rgba(0,0,0,0.4);
+    }
+}
+
+/* Histórico */
+.historico {
+    margin-top: 30px;
+    text-align: left;
+
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: none;
+        max-height: 150px;
+        overflow-y: auto;
+        padding: 0;
+        margin-bottom: 15px;
+
+        li {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+    }
+
+    button {
+        width: 100%;
+        background: @corDeFundo;
+        color: @corDoTexto;
+
+        &:hover {
+            background: darken(@corDeFundo, 10%);
+        }
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    main {
+        font-size: 1em;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    input {
+        font-size: 1.2em;
+    }
+
+    .resultado span {
+        font-size: 2.2em;
+    }
+}
